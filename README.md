@@ -1,75 +1,52 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>경기전 별당채 관리자</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="assets/admin.css?v=20261109-2">
-</head>
-<body>
-  <main class="admin-login" id="adminLogin">
-    <div>
-      <p>BYEOLDANGCHAE CONTENT MANAGER</p>
-      <h1>관리자 로그인</h1>
-      <span>처음 접속하면 이 브라우저에서 사용할 아이디와 비밀번호를 설정합니다. 이 기능은 브라우저별 간단한 접근 제한이며 실제 서버 보안 기능이 아닙니다.</span>
-      <form id="loginForm">
-        <label><span>아이디</span><input id="loginId" type="text" autocomplete="username" required></label>
-        <label><span>비밀번호</span><input id="loginPassword" type="password" autocomplete="current-password" required></label>
-        <em id="loginError" role="alert"></em>
-        <button type="submit">로그인</button>
-      </form>
-      <a class="plain" href="index.html">홈페이지로 돌아가기</a>
-    </div>
-  </main>
+# 경기전 별당채 홈페이지
 
-  <main class="admin-shell" id="adminShell" hidden>
-    <aside class="admin-sidebar">
-      <a class="admin-brand" href="index.html"><span>BYEOLDANGCHAE</span><strong>경기전 별당채</strong></a>
-      <div class="admin-user"><span>STATIC CONTENT MANAGER</span><p>홈페이지 관리자</p></div>
-      <nav id="adminNav">
-        <button type="button" class="active" data-tab="copy"><span>문구 관리</span><small>메인·소개 문구</small></button>
-        <button type="button" data-tab="hero"><span>메인 사진</span><small>첫 화면 슬라이드</small></button>
-        <button type="button" data-tab="rooms"><span>객실 관리</span><small>객실·인원·사진</small></button>
-        <button type="button" data-tab="guide"><span>이용 안내</span><small>연락처·예약·규정</small></button>
-        <button type="button" data-tab="popup"><span>팝업 관리</span><small>첫 방문 안내</small></button>
-        <button type="button" data-tab="github"><span>GitHub 연결</span><small>배포 후 수정 반영</small></button>
-      </nav>
-      <a class="view-site" href="index.html" target="_blank">홈페이지 보기 ↗</a>
-      <button class="admin-logout" type="button" id="logoutButton">로그아웃</button>
-    </aside>
+경주 꿀잠펜션의 화면 구성과 한옥 분위기를 참고한 GitHub Pages용 정적 홈페이지입니다.
 
-    <section class="admin-main">
-      <header class="admin-topbar">
-        <div><p>ADMINISTRATION</p><h1 id="adminTitle">문구 관리</h1></div>
-        <div class="admin-actions"><span id="saveMessage"></span><button type="button" id="saveButton">변경사항 저장</button></div>
-      </header>
+## 파일
+- index.html: 방문자 홈페이지
+- admin.html: 관리자
+- site-data.js: 기본 콘텐츠
+- assets/: 사진, CSS, JavaScript
+- .nojekyll: GitHub Pages 설정 보조 파일
 
-      <div class="static-notice">
-        <strong>GitHub Pages 정적 버전</strong>
-        이 관리자에서 저장한 내용과 계정은 현재 브라우저에만 적용됩니다. 공용 편집·서버 인증 기능은 없으며, 모든 방문자에게 반영하려면 GitHub에 수정 반영을 실행하세요.
-      </div>
+## GitHub Pages 첫 업로드
+1. GitHub에 이 숙소 전용 저장소를 만듭니다. 예: byeoldangchae
+2. ZIP 압축을 풀고 **폴더 안의 파일과 assets 폴더 전체**를 저장소 최상단에 올립니다. index.html이 저장소 바로 아래에 있어야 합니다.
+3. Settings → Pages → Deploy from a branch → main / (root) → Save를 선택합니다.
+4. 배포가 끝나면 Pages 주소를 엽니다. 관리자 주소는 같은 주소 뒤의 admin.html입니다.
+5. ZIP에는 토큰이나 미리 정해진 관리자 비밀번호가 없습니다.
 
-      <div class="admin-content">
-        <section class="admin-tab-panel" data-panel="copy"></section>
-        <section class="admin-tab-panel" data-panel="hero" hidden></section>
-        <section class="admin-tab-panel" data-panel="rooms" hidden></section>
-        <section class="admin-tab-panel" data-panel="guide" hidden></section>
-        <section class="admin-tab-panel" data-panel="popup" hidden></section>
-        <section class="admin-tab-panel" data-panel="github" hidden></section>
+## 관리자 시작
+- admin.html에 처음 접속하면 아이디와 6자 이상 비밀번호를 직접 정합니다.
+- 계정과 편집 내용은 **해당 브라우저에만** 저장됩니다. 이 로그인은 간단한 접근 제한이며 실제 보안 인증 기능이 아닙니다. 공개 코드와 콘텐츠는 누구나 읽을 수 있습니다.
+- 기기 간 같은 관리자 계정·공동 편집에는 별도의 서버 인증 및 DB가 필요합니다.
+- 문구, 연락처, 주소, 사업자 정보, 예약 링크, 메인 사진, 객실·인원·사진, 시설·이용·환불 안내, 관광지, 팝업을 수정할 수 있습니다.
+- 메인·객실·팝업 사진은 업로드하거나 '기존 사진 선택'으로 고를 수 있습니다. 같은 목록에 같은 사진은 중복되지 않습니다. 첫 사진이 대표 사진입니다. 화살표로 순서를 바꾸고 삭제할 수 있습니다.
+- 이야기/시설 사진은 문구 관리의 이미지 경로 입력란에서 수정할 수 있습니다. 기존 이미지 경로를 복사하거나 assets에 사진을 올리고 그 상대 경로를 입력하세요.
+- '변경사항 저장'은 현재 브라우저에 적용됩니다. 모든 방문자에게 반영하려면 GitHub 연결 탭을 이용하세요.
+- 브라우저 저장 공간이 부족하면 사진 크기나 수를 줄이세요. 업로드 사진은 1.5MB 이하를 지원합니다.
+- 설정 백업은 문구와 사진을 포함한 JSON입니다. 복원·기기 이동에 사용하고 소중히 보관하세요.
+- 관리자 계정을 잊은 경우 브라우저의 해당 사이트 저장 데이터를 지우면 계정과 미배포 편집 내용이 모두 사라집니다. 먼저 설정 백업을 보관하세요.
 
-        <div class="admin-backup">
-          <div><h2>설정 백업과 복원</h2><p>문구와 이미지 설정을 파일로 보관하거나 다른 브라우저로 옮길 수 있습니다.</p></div>
-          <div>
-            <button type="button" id="exportButton">설정 백업</button>
-            <label>설정 불러오기<input type="file" id="importInput" accept="application/json"></label>
-            <button type="button" class="danger" id="resetButton">초기화</button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <script src="site-data.js?v=20261109-2"></script>
-  <script src="assets/admin.js?v=20261109-2"></script>
-</body>
-</html>
+## GitHub 재배포
+1. GitHub Pages에서는 사용자명과 저장소를 자동 인식합니다. 그 외 주소에서는 저장소 정보를 펼쳐 직접 입력하세요. 브랜치는 main, 하위 경로는 보통 비웁니다.
+2. https://github.com/settings/personal-access-tokens/new 에서 Fine-grained token을 만듭니다.
+3. Repository access에서 **해당 숙소 저장소 하나만** 선택합니다.
+4. Repository permissions → **Contents → Read and write** 권한을 설정합니다.
+5. 토큰을 관리자 GitHub 연결 탭에 입력하고 연결 확인 후 'GitHub에 수정 반영'을 누릅니다.
+6. 토큰은 현재 페이지 메모리에서만 사용하며, 브라우저 영구 저장·백업·site-data.js·ZIP에 기록하지 않습니다. 새로고침하면 다시 입력해야 합니다.
+7. 배포할 때 최신 파일 SHA를 읽어 site-data.js와 새 업로드 사진만 갱신합니다. 새 사진은 assets/uploads/에 저장됩니다. 기존 사진 파일은 다시 올리지 않습니다.
+8. API 조회는 cache: no-store와 고유 쿼리를 사용합니다. CORS 문제를 피하기 위해 Cache-Control 요청 헤더를 추가하지 않습니다.
+9. 관리자 재배포는 **콘텐츠와 사진 갱신 전용**입니다. HTML·JS·CSS 디자인이나 기능 변경은 최신 ZIP 전체를 다시 업로드하거나 Git으로 커밋·푸시해야 합니다.
+10. 코드 변경 때 관리자 JS/CSS URL의 버전 쿼리를 올리면 캐시를 피할 수 있습니다.
+11. 동시 편집 충돌(SHA 409) 시 페이지를 확인하고 다시 시도하세요. 여러 브라우저에서 동시에 배포하지 마세요.
+12. 실제 GitHub 배포는 소유자의 토큰이 필요하므로 제작 검수에서는 실행하지 않았습니다.
+
+## 사진과 운영 정보
+- 신청서의 7개 객실·인원, 연락처, 예약 링크, 체크인 15:00/체크아웃 11:00, 환불 규정을 반영했습니다.
+- 객실별 사진과 내부 ZIP에서 선별한 사진을 WebP로 최적화했습니다. 이황 사진은 최초 첨부 자료를 사용했습니다.
+- 별도 전달된 전경·입구·야경 사진을 추가 반영했습니다. 분홍 꽃나무와 한옥 대문 사진을 첫 화면에 사용했습니다.
+- 강녕전은 신청서 표기를 따랐습니다. 사진 ZIP 이름은 '강년전'이므로 정식 객실명이 다르면 관리자에서 수정해 주세요.
+- 주차 시설 없음, Wi-Fi 가능, 반려동물 동반 가능으로 안내합니다. 반려동물 동반 세부 조건은 예약 전 문의하도록 안내했습니다.
+- 팝업은 기본 비노출입니다. 여러 개를 추가하여 노출 여부·이미지·문구·버튼 주소를 정할 수 있고, 닫기와 오늘 하루 보지 않기를 지원합니다.
+- Google 지도는 주소 기준 iframe 및 큰 지도 링크입니다. 외부 지도 서비스의 네트워크 상황에 따라 표시가 제한될 수 있습니다.

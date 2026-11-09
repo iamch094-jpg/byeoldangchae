@@ -1,89 +1,249 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>경기전 별당채 | 전주 한옥스테이</title>
-  <meta name="description" content="전주한옥마을 중심부, 경기전과 도보 1분 거리에 위치한 경기전 별당채입니다. 주요 관광지를 걸어서 편리하게 둘러보고, 고즈넉한 한옥에서 여행의 여운을 이어가세요.">
-  <meta property="og:title" content="경기전 별당채">
-  <meta property="og:description" content="전주한옥마을 중심, 경기전 도보 1분의 고즈넉한 한옥">
-  <meta property="og:image" content="assets/images/exterior-1c6a7a1a54714d.webp">
-  <link rel="stylesheet" href="assets/style.css?v=20261109-3">
-</head>
-<body>
-  <main>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="경기전 별당채 홈"><span data-brand-en></span><strong data-brand></strong></a>
-      <nav aria-label="주요 메뉴">
-        <button type="button" data-go="story">ABOUT</button>
-        <button type="button" data-go="rooms">ROOMS</button>
-        <button type="button" data-go="guide">GUIDE</button>
-        <a data-booking target="_blank" rel="noreferrer">RESERVATION</a>
-      </nav>
-      <button class="menu-button" type="button" aria-label="메뉴 열기"><i></i><i></i></button>
-    </header>
-
-    <section id="top" class="hero">
-      <div class="hero-media" id="heroMedia"><div class="hero-shade"></div></div>
-      <div class="hero-copy"><p id="heroEyebrow"></p><h1 id="heroTitle"></h1><em id="heroSubtitle"></em></div>
-      <a class="hero-booking" data-booking target="_blank" rel="noreferrer">머무는 날 예약하기 ↗</a><div class="hero-pager" id="heroPager" aria-label="메인 사진 선택"></div>
-      <button class="scroll-cue" data-go="story" type="button">SCROLL <span>↓</span></button>
-    </section>
-
-    <section id="story" class="intro-section">
-      <div class="intro-heading"><p class="eyebrow" id="introEyebrow"></p><h2 id="introTitle"></h2></div>
-      <div class="intro-body"><p id="introBody"></p><div class="ink-mark">休</div></div>
-    </section>
-
-    <section class="story-section">
-      <div class="story-image large"><img src="assets/images/ihwang-01.webp" alt="경기전 별당채 한옥과 마당"></div>
-      <div class="story-copy">
-        <span class="vertical-kicker">全州 · 韓屋 · 休息</span>
-        <p class="eyebrow">A HOUSE IN JEONJU</p>
-        <h2 id="storyTitle"></h2><p id="storyBody"></p>
-        <div class="story-detail"><img src="assets/images/ihwang-03.webp" alt="경기전 별당채 입구"></div>
-      </div>
-    </section>
-
-    <section id="rooms" class="rooms-section">
-      <div class="section-title"><div><p class="eyebrow">ROOMS</p><h2>각자의 여행에 맞는 일곱 공간</h2></div><p>사진을 선택하면 객실의 모습을 더 자세히 볼 수 있습니다.</p></div>
-      <div class="room-list" id="roomList"></div>
-    </section>
-
-    <section class="amenity-section">
-      <div class="amenity-photo"><img src="assets/images/ihwang-02.webp" alt="경기전 별당채 마당의 쉼터"><p>THE WARMTH OF HANOK</p></div>
-      <div class="amenity-copy"><p class="eyebrow">STAY WITH EASE</p><h2 id="amenityTitle"></h2><ul id="amenities"></ul></div>
-    </section>
-
-    <section id="guide" class="guide-section">
-      <div class="guide-heading"><p class="eyebrow">INFORMATION</p><h2>머무르기 전<br>확인해 주세요</h2><a data-booking target="_blank" rel="noreferrer">실시간 예약하기 <span>↗</span></a></div>
-      <div class="guide-content">
-        <div class="time-grid"><div><small>CHECK IN</small><strong id="checkIn"></strong></div><div><small>CHECK OUT</small><strong id="checkOut"></strong></div></div>
-        <div class="guide-row"><h3>오시는 길</h3><p id="address"></p></div>
-        <div class="map-card">
-          <iframe id="mapFrame" title="경기전 별당채 위치 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-          <a id="mapLink" target="_blank" rel="noreferrer">큰 지도에서 위치 보기 <span>↗</span></a>
-        </div>
-        <div class="guide-row"><h3>주변 여행</h3><ul id="nearby"></ul></div>
-        <details class="refund"><summary>환불 규정 보기 <span>＋</span></summary><ul id="refundPolicy"></ul></details>
-      </div>
-    </section>
-
-    <section class="reservation-band">
-      <p>고즈넉한 한옥에서의 쉼을 예약하세요</p><h2>전주의 하루를,<br>별당채에서</h2>
-      <div><a data-booking target="_blank" rel="noreferrer">실시간 예약</a><a id="phoneLink"><span data-phone></span></a></div>
-    </section>
-
-    <footer>
-      <div class="footer-brand"><span data-brand-en></span><strong data-brand></strong></div>
-      <div><p id="footerAddress"></p><p>대표자명: <span id="representativeName">이준표</span></p><p>사업자등록번호: <span id="businessNumber">490-31-01768</span></p><p>예약문의 <span data-phone></span></p></div>
-      <div class="footer-links"><a data-booking target="_blank" rel="noreferrer">RESERVATION ↗</a><a href="admin.html">ADMIN</a></div>
-    </footer>
-
-    <div class="popup-stack" id="popupStack" aria-live="polite"></div>
-    <div class="room-modal" id="roomModal" hidden></div>
-  </main>
-  <script src="site-data.js?v=20261109-3"></script>
-  <script src="assets/site.js?v=20261109-3"></script>
-</body>
-</html>
+window.BYEOLDANG_DEFAULT = {
+  "brand": "경기전 별당채",
+  "englishBrand": "BYEOLDANGCHAE HANOK STAY",
+  "heroEyebrow": "A HANOK STAY IN JEONJU",
+  "heroTitle": "전주의 시간 속에\n머무는 고요한 하루",
+  "heroSubtitle": "전주한옥마을 중심 · 경기전 도보 1분",
+  "heroImages": [
+    "assets/images/exterior-1c6a7a1a54714d.webp",
+    "assets/images/exterior-7bbb04931294b4.webp",
+    "assets/images/exterior-509e79a82ecee3.webp",
+    "assets/images/exterior-11515ba61785db.webp"
+  ],
+  "introEyebrow": "SLOW STAY, DEEP REST",
+  "introTitle": "골목 끝에서 만나는,\n한옥의 다정한 쉼",
+  "introBody": "전주한옥마을 중심부, 경기전과 도보 1분 거리에 위치한 경기전 별당채입니다. 주요 관광지를 걸어서 편리하게 둘러보고, 고즈넉한 한옥에서 여행의 여운을 이어가세요.",
+  "storyTitle": "전주를 가까이, 쉼을 깊이",
+  "storyBody": "한옥마을을 천천히 거닐고 경기전을 둘러보는 하루. 여행의 발걸음을 멈추면 나무의 온기가 느껴지는 공간이 기다립니다.",
+  "rooms": [
+    {
+      "id": "room-1",
+      "name": "이성계",
+      "englishName": "YI SEONG-GYE",
+      "capacity": "기준 3명 · 최대 4명",
+      "description": "나무 서까래와 다락 공간이 어우러진 객실입니다. 기준 3명부터 최대 4명까지 머무실 수 있습니다.",
+      "images": [
+        "assets/images/photo-4f7c9e1a46eb67.webp",
+        "assets/images/photo-c298b32afc73ba.webp",
+        "assets/images/photo-1f9f5c5ace02b0.webp",
+        "assets/images/photo-1a94b3e8ca6af9.webp",
+        "assets/images/photo-235020f71dba91.webp",
+        "assets/images/photo-46726f9353d770.webp",
+        "assets/images/photo-c9e7764a85a895.webp"
+      ]
+    },
+    {
+      "id": "room-2",
+      "name": "신사임당",
+      "englishName": "SHIN SAIMDANG",
+      "capacity": "기준 1명 · 최대 2명",
+      "description": "낮은 침구와 나무 천장이 편안한 분위기를 전하는 온돌 객실입니다.",
+      "images": [
+        "assets/images/photo-7943c2110d01df.webp",
+        "assets/images/photo-30a0df86faf582.webp",
+        "assets/images/photo-9b550516de682c.webp",
+        "assets/images/photo-d6a28782b4137c.webp",
+        "assets/images/photo-61243e215c7ef2.webp",
+        "assets/images/photo-d3ecaffd691e3a.webp"
+      ]
+    },
+    {
+      "id": "room-3",
+      "name": "이황",
+      "englishName": "YI HWANG",
+      "capacity": "기준 1명 · 최대 2명",
+      "description": "나무의 결이 느껴지는 아늑한 온돌 객실입니다.",
+      "images": [
+        "assets/images/ihwang-01.webp",
+        "assets/images/ihwang-02.webp",
+        "assets/images/ihwang-03.webp",
+        "assets/images/ihwang-04.webp"
+      ]
+    },
+    {
+      "id": "room-4",
+      "name": "율곡",
+      "englishName": "YULGOK",
+      "capacity": "기준 1명 · 최대 2명",
+      "description": "나무 창살과 밝은 벽이 어우러진 아늑한 객실입니다.",
+      "images": [
+        "assets/images/photo-f476408281410a.webp",
+        "assets/images/photo-a608246d8ffdfa.webp",
+        "assets/images/photo-b6baf6e0320980.webp",
+        "assets/images/photo-d9692b2472b5bf.webp",
+        "assets/images/photo-110c2e4ec49720.webp",
+        "assets/images/photo-d874dfc234bc0a.webp"
+      ]
+    },
+    {
+      "id": "room-5",
+      "name": "세종대왕 침전",
+      "englishName": "KING SEJONG",
+      "capacity": "기준 4명 · 최대 6명",
+      "description": "가족과 함께 머무르기 좋은 침대 객실입니다. 기준 4명부터 최대 6명까지 이용하실 수 있습니다.",
+      "images": [
+        "assets/images/photo-f14f21e3293346.webp",
+        "assets/images/photo-96a935af44ce5f.webp",
+        "assets/images/photo-3f01ef47dc82f9.webp",
+        "assets/images/photo-ae82c8abd69a39.webp",
+        "assets/images/photo-bc77b6953b18b4.webp",
+        "assets/images/photo-d9577a09c4e860.webp"
+      ]
+    },
+    {
+      "id": "room-6",
+      "name": "교태전",
+      "englishName": "GYOTAEJEON",
+      "capacity": "기준 1명 · 최대 2명",
+      "description": "한옥의 문살과 낮은 침구가 어우러진 온돌 객실입니다.",
+      "images": [
+        "assets/images/photo-b1985ea8a702d8.webp",
+        "assets/images/photo-4d95acea391a3f.webp",
+        "assets/images/photo-0f94132b85fa5b.webp",
+        "assets/images/photo-753630a6f92d6b.webp",
+        "assets/images/photo-78a0d45a87b8ac.webp",
+        "assets/images/photo-6bce4d751b89bc.webp"
+      ]
+    },
+    {
+      "id": "room-7",
+      "name": "강녕전(단체)",
+      "englishName": "GANGNYEONGJEON",
+      "capacity": "기준 10명 · 최대 15명",
+      "description": "함께하는 여행을 위한 단체 객실입니다. 기준 10명부터 최대 15명까지 이용 가능하며, 공간 구성과 이용 범위는 예약 전 문의해 주세요.",
+      "images": [
+        "assets/images/photo-af88d7d7fbf2ba.webp",
+        "assets/images/photo-b90c14dde9d52a.webp",
+        "assets/images/photo-5e4b1b360d3d12.webp",
+        "assets/images/photo-51f36a760d3d48.webp",
+        "assets/images/photo-275beeb65fe8b1.webp",
+        "assets/images/photo-30a0df86faf582.webp",
+        "assets/images/photo-7943c2110d01df.webp",
+        "assets/images/photo-0bb08ef49b842c.webp",
+        "assets/images/photo-bfc25ecf9b8fb2.webp",
+        "assets/images/photo-fe15e5aa0f940b.webp",
+        "assets/images/photo-7f2f8c55b0d9f9.webp",
+        "assets/images/photo-1049463fae52fa.webp",
+        "assets/images/photo-bceb0b968de4ea.webp",
+        "assets/images/photo-7bbb04931294b4.webp",
+        "assets/images/photo-9b1ce6a2da259d.webp",
+        "assets/images/photo-a002ee6d7da7e7.webp",
+        "assets/images/photo-16e347306653c4.webp"
+      ]
+    }
+  ],
+  "amenityTitle": "가까이 누리는 여행,\n편안하게 머무는 시간",
+  "amenities": [
+    "Wi-Fi 이용 가능",
+    "반려동물 동반 가능 · 상세 조건 예약 전 문의",
+    "주차 시설 없음 · 방문 전 주차 방법 문의",
+    "바비큐 · 수영장 · 스파 시설 없음"
+  ],
+  "checkIn": "15:00",
+  "checkOut": "11:00",
+  "phone": "010-2164-7550",
+  "address": "전북 전주시 완산구 풍남동3가 45-2",
+  "representativeName": "이준표",
+  "businessNumber": "490-31-01768",
+  "bookingUrl": "https://booking.ddnayo.com/?accommodationId=107015",
+  "nearby": [
+    {
+      "name": "경기전",
+      "distance": "도보 1분"
+    },
+    {
+      "name": "전주 한옥마을",
+      "distance": "도보 1분"
+    }
+  ],
+  "refundPolicy": [
+    "당일 취소 시 환불 불가",
+    "이용일 1일 전 30% 환불",
+    "이용일 2일 전 50% 환불",
+    "이용일 3일 전 70% 환불",
+    "이용일 4일 전 80% 환불",
+    "이용일 5일 전 85% 환불",
+    "이용일 6일 전 90% 환불",
+    "기본 취소 수수료 10%",
+    "타 채널 환불 규정은 각각 다를 수 있으니 예약 채널에서 확인해 주세요."
+  ],
+  "popups": [],
+  "storyImage": "assets/images/exterior-1c6a7a1a54714d.webp",
+  "detailImage": "assets/images/exterior-887b0571ea4aa8.webp",
+  "amenityImage": "assets/images/exterior-509e79a82ecee3.webp",
+  "reservationTitle": "전주의 하루를,\n별당채에서",
+  "reservationIntro": "고즈넉한 한옥에서의 쉼을 예약하세요",
+  "photoLibrary": [
+    "assets/images/exterior-1c6a7a1a54714d.webp",
+    "assets/images/exterior-e770a763ae528c.webp",
+    "assets/images/exterior-fb5b598ad806ea.webp",
+    "assets/images/exterior-11515ba61785db.webp",
+    "assets/images/exterior-c2ee7b72b9eb7a.webp",
+    "assets/images/exterior-e7079b387a86a1.webp",
+    "assets/images/exterior-887b0571ea4aa8.webp",
+    "assets/images/exterior-6d68245a653979.webp",
+    "assets/images/photo-4f7c9e1a46eb67.webp",
+    "assets/images/photo-c298b32afc73ba.webp",
+    "assets/images/photo-1f9f5c5ace02b0.webp",
+    "assets/images/photo-1a94b3e8ca6af9.webp",
+    "assets/images/photo-235020f71dba91.webp",
+    "assets/images/photo-46726f9353d770.webp",
+    "assets/images/photo-c9e7764a85a895.webp",
+    "assets/images/photo-7943c2110d01df.webp",
+    "assets/images/photo-30a0df86faf582.webp",
+    "assets/images/photo-9b550516de682c.webp",
+    "assets/images/photo-d6a28782b4137c.webp",
+    "assets/images/photo-61243e215c7ef2.webp",
+    "assets/images/photo-d3ecaffd691e3a.webp",
+    "assets/images/photo-f476408281410a.webp",
+    "assets/images/photo-a608246d8ffdfa.webp",
+    "assets/images/photo-b6baf6e0320980.webp",
+    "assets/images/photo-d9692b2472b5bf.webp",
+    "assets/images/photo-110c2e4ec49720.webp",
+    "assets/images/photo-d874dfc234bc0a.webp",
+    "assets/images/photo-b1985ea8a702d8.webp",
+    "assets/images/photo-4d95acea391a3f.webp",
+    "assets/images/photo-0f94132b85fa5b.webp",
+    "assets/images/photo-753630a6f92d6b.webp",
+    "assets/images/photo-78a0d45a87b8ac.webp",
+    "assets/images/photo-6bce4d751b89bc.webp",
+    "assets/images/photo-f14f21e3293346.webp",
+    "assets/images/photo-96a935af44ce5f.webp",
+    "assets/images/photo-3f01ef47dc82f9.webp",
+    "assets/images/photo-ae82c8abd69a39.webp",
+    "assets/images/photo-bc77b6953b18b4.webp",
+    "assets/images/photo-d9577a09c4e860.webp",
+    "assets/images/photo-af88d7d7fbf2ba.webp",
+    "assets/images/photo-b90c14dde9d52a.webp",
+    "assets/images/photo-5e4b1b360d3d12.webp",
+    "assets/images/photo-51f36a760d3d48.webp",
+    "assets/images/photo-275beeb65fe8b1.webp",
+    "assets/images/photo-0bb08ef49b842c.webp",
+    "assets/images/photo-bfc25ecf9b8fb2.webp",
+    "assets/images/photo-fe15e5aa0f940b.webp",
+    "assets/images/photo-7f2f8c55b0d9f9.webp",
+    "assets/images/photo-1049463fae52fa.webp",
+    "assets/images/photo-bceb0b968de4ea.webp",
+    "assets/images/photo-7bbb04931294b4.webp",
+    "assets/images/photo-9b1ce6a2da259d.webp",
+    "assets/images/photo-a002ee6d7da7e7.webp",
+    "assets/images/photo-16e347306653c4.webp",
+    "assets/images/photo-5d7898710629db.webp",
+    "assets/images/photo-2580ab2ad114b1.webp",
+    "assets/images/photo-d389ca0835095a.webp",
+    "assets/images/photo-78bcd9e82c1f9e.webp",
+    "assets/images/photo-4fcd8987da2b92.webp",
+    "assets/images/photo-9bf17b2d6b061d.webp",
+    "assets/images/ihwang-01.webp",
+    "assets/images/ihwang-02.webp",
+    "assets/images/ihwang-03.webp",
+    "assets/images/ihwang-04.webp",
+    "assets/images/exterior-7ed2115132db5a.webp",
+    "assets/images/exterior-7bbb04931294b4.webp",
+    "assets/images/exterior-41f99f74567d8b.webp",
+    "assets/images/exterior-a0ebf426c8f002.webp",
+    "assets/images/exterior-15f36da271a22b.webp",
+    "assets/images/exterior-0c26f147e44859.webp",
+    "assets/images/exterior-509e79a82ecee3.webp"
+  ]
+};

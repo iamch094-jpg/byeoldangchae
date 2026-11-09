@@ -1,0 +1,1207 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap");
+
+:root {
+  --ink: #22231f;
+  --paper: #f3f0e7;
+  --paper-dark: #e9e4d7;
+  --pine: #39493b;
+  --rust: #8c533b;
+  --line: rgba(34, 35, 31, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4.5vw;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand span,
+.footer-brand span {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.brand strong,
+.footer-brand strong {
+  font-family: "Gowun Batang", serif;
+  font-size: 23px;
+  letter-spacing: 0.08em;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 3.5vw, 56px);
+}
+
+.site-header nav button,
+.site-header nav a {
+  border: 0;
+  padding: 10px 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.menu-button {
+  display: none;
+}
+
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.hero-media,
+.hero-media img,
+.hero-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media img {
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.035);
+  transition:
+    opacity 1.9s cubic-bezier(.4, 0, .2, 1),
+    transform 8s cubic-bezier(.2, .55, .25, 1);
+  will-change: opacity, transform;
+}
+
+.hero-media img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-shade {
+  background:
+    linear-gradient(90deg, rgba(20, 21, 18, 0.5), transparent 62%),
+    linear-gradient(0deg, rgba(20, 21, 18, 0.4), transparent 46%);
+}
+
+.hero-copy {
+  position: absolute;
+  left: 9vw;
+  top: 50%;
+  transform: translateY(-44%);
+}
+
+.hero-copy p,
+.eyebrow {
+  margin: 0 0 24px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-family: "Gowun Batang", serif;
+  font-size: clamp(48px, 6.5vw, 94px);
+  font-weight: 400;
+  line-height: 1.23;
+  letter-spacing: -0.055em;
+}
+
+.hero-copy h1 span,
+.intro-heading h2 span,
+.amenity-copy h2 span,
+.welcome-popup h2 span {
+  display: block;
+}
+
+.hero-copy em {
+  display: block;
+  margin-top: 30px;
+  font-family: "Gowun Batang", serif;
+  font-size: 15px;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+
+.hero-pager {
+  position: absolute;
+  right: 4.5vw;
+  bottom: 60px;
+  display: flex;
+  gap: 12px;
+}
+
+.hero-pager button {
+  width: 36px;
+  height: 18px;
+  border: 0;
+  padding: 8px 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hero-pager span {
+  display: block;
+  height: 1px;
+  background: rgba(255,255,255,.45);
+}
+
+.hero-pager .active span {
+  height: 2px;
+  background: #fff;
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 4.5vw;
+  bottom: 56px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+}
+
+.scroll-cue span {
+  margin-left: 14px;
+  font-size: 17px;
+}
+
+.intro-section {
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 8vw;
+  align-items: center;
+  padding: 130px 9vw;
+}
+
+.intro-heading h2,
+.amenity-copy h2,
+.guide-heading h2 {
+  margin: 0;
+  font-family: "Gowun Batang", serif;
+  font-size: clamp(38px, 4vw, 64px);
+  font-weight: 400;
+  line-height: 1.42;
+  letter-spacing: -0.05em;
+}
+
+.intro-body {
+  align-self: end;
+  max-width: 470px;
+  padding-bottom: 45px;
+}
+
+.intro-body > p {
+  margin: 0;
+  font-family: "Gowun Batang", serif;
+  font-size: 17px;
+  line-height: 2.05;
+  word-break: keep-all;
+}
+
+.ink-mark {
+  margin-top: 38px;
+  color: var(--rust);
+  font-family: "Gowun Batang", serif;
+  font-size: 42px;
+}
+
+.story-section {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  min-height: 820px;
+  background: var(--pine);
+  color: #eeeade;
+}
+
+.story-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-copy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 110px 7vw;
+}
+
+.vertical-kicker {
+  position: absolute;
+  top: 46px;
+  right: 32px;
+  writing-mode: vertical-rl;
+  font-family: "Gowun Batang", serif;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  opacity: .6;
+}
+
+.story-copy h2 {
+  margin: 0 0 28px;
+  font-family: "Gowun Batang", serif;
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 400;
+}
+
+.story-copy > p:not(.eyebrow) {
+  margin: 0;
+  font-family: "Gowun Batang", serif;
+  font-size: 16px;
+  line-height: 2;
+  word-break: keep-all;
+  opacity: .82;
+}
+
+.story-detail {
+  width: 54%;
+  margin: 52px 0 -210px -22%;
+  border: 8px solid var(--paper);
+}
+
+.rooms-section {
+  padding: 170px 4.5vw 150px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 0 4.5vw 70px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-family: "Gowun Batang", serif;
+  font-size: clamp(34px, 4vw, 58px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.section-title > p {
+  max-width: 310px;
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.room-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.room-card button {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.room-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--paper-dark);
+}
+
+.room-photo img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s ease;
+}
+
+.room-card button:hover .room-photo img {
+  transform: scale(1.035);
+}
+
+.room-photo span {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+  color: white;
+  font-size: 9px;
+  letter-spacing: .16em;
+}
+
+.room-meta {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: end;
+  gap: 14px;
+  padding: 24px 2px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.room-meta > p,
+.room-meta small,
+.room-meta strong {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: .1em;
+}
+
+.room-meta h3 {
+  margin: 7px 0 0;
+  font-family: "Gowun Batang", serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.room-meta strong {
+  padding-bottom: 4px;
+  color: #62635c;
+  letter-spacing: 0;
+}
+
+.amenity-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 780px;
+  background: #dcd7c9;
+}
+
+.amenity-photo {
+  position: relative;
+}
+
+.amenity-photo img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.amenity-photo p {
+  position: absolute;
+  left: 28px;
+  bottom: 18px;
+  margin: 0;
+  color: white;
+  font-size: 9px;
+  letter-spacing: .18em;
+}
+
+.amenity-copy {
+  padding: 120px 9vw;
+}
+
+.amenity-copy ul {
+  margin: 60px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.amenity-copy li {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: "Gowun Batang", serif;
+  font-size: 17px;
+}
+
+.amenity-copy li span {
+  color: var(--rust);
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 9px;
+}
+
+.guide-section {
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  padding: 150px 9vw;
+  gap: 10vw;
+}
+
+.guide-heading a {
+  display: inline-flex;
+  justify-content: space-between;
+  min-width: 210px;
+  margin-top: 55px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--ink);
+  font-size: 13px;
+}
+
+.guide-content {
+  border-top: 1px solid var(--ink);
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--line);
+}
+
+.time-grid > div {
+  padding: 36px 30px 32px 0;
+}
+
+.time-grid > div + div {
+  border-left: 1px solid var(--line);
+  padding-left: 30px;
+}
+
+.time-grid small {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 9px;
+  letter-spacing: .2em;
+}
+
+.time-grid strong {
+  font-family: "Gowun Batang", serif;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.guide-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 30px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-row h3,
+.guide-row p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.guide-row ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-row li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-family: "Gowun Batang", serif;
+  font-size: 15px;
+}
+
+.guide-row li em {
+  color: #6a6a63;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.map-card {
+  overflow: hidden;
+  margin: 30px 0 6px;
+  border: 1px solid var(--line);
+  background: var(--paper-dark);
+}
+
+.map-card iframe {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: 0;
+  filter: saturate(.72) sepia(.08);
+}
+
+.map-card a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 20px;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+  font-size: 12px;
+  letter-spacing: .04em;
+}
+
+.map-card a span {
+  color: var(--rust);
+  font-size: 16px;
+}
+
+.refund {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--ink);
+}
+
+.refund summary {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 13px;
+  list-style: none;
+}
+
+.refund ul {
+  columns: 2;
+  margin: 25px 0 5px;
+  padding-left: 18px;
+  color: #62635c;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.reservation-band {
+  min-height: 610px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px;
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(rgba(35,35,29,.58), rgba(35,35,29,.58)),
+    url("/images/exterior/exterior-01.webp") center / cover;
+}
+
+.reservation-band > p {
+  margin: 0 0 25px;
+  font-size: 11px;
+  letter-spacing: .16em;
+}
+
+.reservation-band h2 {
+  margin: 0;
+  font-family: "Gowun Batang", serif;
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.reservation-band > div {
+  display: flex;
+  gap: 12px;
+  margin-top: 50px;
+}
+
+.reservation-band a {
+  min-width: 190px;
+  padding: 17px 25px;
+  border: 1px solid rgba(255,255,255,.72);
+  font-size: 12px;
+}
+
+.reservation-band a:first-child {
+  background: white;
+  color: var(--ink);
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: end;
+  gap: 30px;
+  padding: 72px 4.5vw;
+  background: #20221e;
+  color: #dedbcf;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+footer p {
+  margin: 4px 0;
+  font-size: 11px;
+  opacity: .72;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+.popup-stack {
+  position: fixed;
+  z-index: 60;
+  top: 112px;
+  left: 32px;
+  width: min(390px, calc(100vw - 36px));
+  max-height: calc(100vh - 132px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.welcome-popup {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  color: #f4f1e7;
+  background: var(--pine);
+  box-shadow: 0 22px 60px rgba(0,0,0,.22);
+}
+
+.welcome-popup > button {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: 0;
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: white;
+  background: rgba(22,28,23,.62);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.popup-photo {
+  height: 190px;
+  background: #222a23;
+}
+
+.popup-photo img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup-content {
+  padding: 30px 34px 28px;
+}
+
+.popup-content > p {
+  margin: 0 0 18px;
+  font-size: 9px;
+  letter-spacing: .2em;
+}
+
+.popup-content h2 {
+  margin: 0;
+  font-family: "Gowun Batang", serif;
+  font-size: 29px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.popup-content em {
+  display: block;
+  margin: 22px 0;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.8;
+  opacity: .76;
+}
+
+.popup-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,.4);
+}
+
+.popup-actions button,
+.popup-actions a {
+  border: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  font-size: 10px;
+}
+
+.popup-actions button {
+  cursor: pointer;
+  text-align: left;
+  opacity: .75;
+}
+
+.popup-actions a {
+  display: flex;
+  justify-content: space-between;
+  border-left: 1px solid rgba(255,255,255,.25);
+  padding-left: 18px;
+}
+
+.floating-call {
+  position: fixed;
+  z-index: 45;
+  right: 24px;
+  bottom: 24px;
+  width: 54px;
+  height: 54px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  background: var(--rust);
+  box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+.room-modal {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1.4fr .6fr;
+  background: #191a17;
+  color: white;
+}
+
+.modal-close {
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  right: 30px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+.modal-photo {
+  position: relative;
+  min-height: 0;
+  background: #0d0e0c;
+}
+
+.modal-photo img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.modal-photo button {
+  position: absolute;
+  bottom: 25px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(255,255,255,.6);
+  color: white;
+  background: rgba(20,20,18,.4);
+  cursor: pointer;
+}
+
+.modal-photo button:first-of-type {
+  right: 78px;
+}
+
+.modal-photo button:last-of-type {
+  right: 22px;
+}
+
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8vw 6vw;
+  background: var(--pine);
+}
+
+.modal-info > p {
+  margin: 0 0 20px;
+  font-size: 9px;
+  letter-spacing: .18em;
+}
+
+.modal-info h2 {
+  margin: 0 0 15px;
+  font-family: "Gowun Batang", serif;
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 400;
+}
+
+.modal-info strong {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.modal-info em {
+  margin-top: 35px;
+  font-family: "Gowun Batang", serif;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 2;
+  opacity: .78;
+}
+
+.modal-count {
+  margin-top: 60px;
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    height: 78px;
+    padding: 0 22px;
+  }
+
+  .site-header nav {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    background: var(--pine);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+  }
+
+  .site-header nav.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-header nav button,
+  .site-header nav a {
+    font-family: "Gowun Batang", serif;
+    font-size: 24px;
+  }
+
+  .menu-button {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    background: transparent;
+  }
+
+  .menu-button i {
+    position: absolute;
+    left: 4px;
+    width: 25px;
+    height: 1px;
+    background: white;
+  }
+
+  .menu-button i:first-child { top: 12px; }
+  .menu-button i:last-child { top: 20px; }
+
+  .hero-copy {
+    left: 8vw;
+    right: 8vw;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(44px, 12vw, 72px);
+  }
+
+  .hero-pager {
+    right: 22px;
+    bottom: 36px;
+  }
+
+  .scroll-cue {
+    left: 22px;
+    bottom: 33px;
+  }
+
+  .intro-section,
+  .story-section,
+  .amenity-section,
+  .guide-section {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-section {
+    min-height: 0;
+    padding: 110px 8vw;
+  }
+
+  .intro-body {
+    padding-bottom: 0;
+  }
+
+  .story-image {
+    height: 65vw;
+    min-height: 380px;
+  }
+
+  .story-copy {
+    padding: 90px 9vw 150px;
+  }
+
+  .story-detail {
+    width: 48%;
+    margin: 50px 0 -210px 45%;
+  }
+
+  .rooms-section {
+    padding-top: 140px;
+  }
+
+  .section-title {
+    align-items: start;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .room-list {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .room-photo {
+    aspect-ratio: 4 / 3;
+  }
+
+  .amenity-photo {
+    min-height: 520px;
+  }
+
+  .amenity-copy {
+    padding: 100px 9vw;
+  }
+
+  .guide-section {
+    padding: 110px 9vw;
+  }
+
+  .reservation-band a {
+    min-width: 160px;
+  }
+
+  footer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-links {
+    grid-column: 1 / -1;
+  }
+
+  .room-modal {
+    grid-template-columns: 1fr;
+    grid-template-rows: 65vh 35vh;
+  }
+
+  .modal-info {
+    padding: 35px 8vw;
+  }
+
+  .modal-info em,
+  .modal-count {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    min-height: 620px;
+  }
+
+  .hero-media img {
+    object-position: 58% center;
+  }
+
+  .hero-copy h1 {
+    font-size: 44px;
+  }
+
+  .hero-copy em {
+    font-size: 13px;
+  }
+
+  .intro-heading h2,
+  .amenity-copy h2,
+  .guide-heading h2 {
+    font-size: 36px;
+  }
+
+  .story-copy {
+    padding-bottom: 120px;
+  }
+
+  .story-detail {
+    width: 62%;
+    margin-left: 32%;
+  }
+
+  .rooms-section {
+    padding: 120px 20px 100px;
+  }
+
+  .section-title {
+    margin: 0 0 50px;
+  }
+
+  .room-meta {
+    grid-template-columns: 30px 1fr;
+  }
+
+  .room-meta strong {
+    grid-column: 2;
+  }
+
+  .amenity-photo {
+    min-height: 420px;
+  }
+
+  .time-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .time-grid > div + div {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+  }
+
+  .guide-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .map-card iframe {
+    height: 300px;
+  }
+
+  .refund ul {
+    columns: 1;
+  }
+
+  .reservation-band > div {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-links {
+    grid-column: auto;
+  }
+
+  .popup-stack {
+    top: 88px;
+    right: 18px;
+    left: 18px;
+    width: auto;
+    max-height: calc(100vh - 106px);
+  }
+
+  .floating-call {
+    display: flex;
+  }
+
+  .popup-stack:not(:empty) ~ .floating-call {
+    display: none;
+  }
+
+  .room-modal {
+    grid-template-rows: 58vh 42vh;
+  }
+
+  .modal-info h2 {
+    font-size: 34px;
+  }
+
+  .modal-info em {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+/* Byeoldangchae: preserve Gguljam composition, adapt portrait room photos. */
+.hero-booking{position:absolute;left:9vw;bottom:100px;border-bottom:1px solid #fff;padding:12px 0;font-size:13px;letter-spacing:.1em}
+.hero-media img{object-position:center 43%}
+.hero-shade{background:linear-gradient(90deg,rgba(25,22,17,.72),rgba(25,22,17,.15)),linear-gradient(0deg,rgba(25,22,17,.35),transparent)}
+.photo-pending{height:100%;min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;background:#e5dfd1;color:#685e4a;border:1px solid #d7cfbc}
+.photo-pending b{font-family:"Gowun Batang",serif;font-size:30px;font-weight:400}.photo-pending small{font-size:12px}
+.room-photo img{object-position:center 45%}.reservation-band h2 span{display:block}
+:focus-visible{outline:3px solid #ab7c43;outline-offset:5px}
+@media(max-width:700px){.hero-booking{bottom:120px}.hero-copy h1{font-size:clamp(37px,9vw,60px)}.brand strong{font-size:19px}.brand span{font-size:7px}.photo-pending{min-height:240px}.site-header{mix-blend-mode:normal;background:rgba(34,35,31,.8)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+@media(max-width:560px){.modal-info{overflow:auto;padding:26px 8vw}.modal-info em{display:block;font-size:12px;line-height:1.8}.room-modal{grid-template-rows:55svh 45svh}.modal-info>p{margin-bottom:12px}.modal-info h2{margin-bottom:12px}}
+
+.site-header{mix-blend-mode:normal;background:linear-gradient(rgba(20,23,19,.65),rgba(20,23,19,.25));backdrop-filter:blur(5px);color:#fff}section[id]{scroll-margin-top:95px}
